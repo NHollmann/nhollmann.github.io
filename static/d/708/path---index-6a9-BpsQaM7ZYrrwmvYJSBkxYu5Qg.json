@@ -1,0 +1,1 @@
+{"data":{"site":{"siteMetadata":{"title":"Nicolas Hollmann Blog"}},"allMarkdownRemark":{"edges":[{"node":{"excerpt":"This is the first post in this demo blog. \nI hope the content on this blog will change.","fields":{"slug":"/hello-world/"},"frontmatter":{"date":"February 22, 2019","title":"Hello World"}}}]}},"pageContext":{}}
