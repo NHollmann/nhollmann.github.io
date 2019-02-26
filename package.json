@@ -1,8 +1,8 @@
 {
   "name": "nhollmann-blog",
   "private": true,
-  "description": "My small github.io/gatsby based blog.",
-  "version": "0.1.0",
+  "description": "Archive for projects I've worked on.",
+  "version": "1.0.0",
   "author": "Nicolas Hollmann",
   "dependencies": {
     "gatsby": "^2.1.16",

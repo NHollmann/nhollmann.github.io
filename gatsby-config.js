@@ -1,16 +1,17 @@
 module.exports = {
   siteMetadata: {
-    title: `Nicolas Hollmann Blog`,
+    title: `Nicolas Hollmann Project Archive`,
+    shortTitle: `NH Archive`,
     author: `Nicolas Hollmann`,
-    description: `My small github.io/gatsby based blog.`,
+    description: `Archive for projects I've worked on.`,
     siteUrl: `https://nhollmann.github.io/`
   },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
+        path: `${__dirname}/content/data`,
+        name: `data`,
       },
     },
     {
@@ -48,8 +49,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Nicolas Hollmann`,
-        short_name: `NH Blog`,
+        name: `Nicolas Hollmann Project Archive`,
+        short_name: `NH Archive`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,

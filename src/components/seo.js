@@ -16,7 +16,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               lang,
             }}
             title={title}
-            titleTemplate={`%s | ${data.site.siteMetadata.title}`}
+            titleTemplate={`%s | ${data.site.siteMetadata.shortTitle}`}
             meta={[
               {
                 name: `description`,
@@ -88,6 +88,7 @@ const detailsQuery = graphql`
     site {
       siteMetadata {
         title
+        shortTitle
         description
         author
       }
