@@ -1,4 +1,5 @@
-# Nicolas Hollmann Project Archive [![Build Status](https://travis-ci.org/NHollmann/nhollmann.github.io.svg?branch=develop)](https://travis-ci.org/NHollmann/nhollmann.github.io)
+# Nicolas Hollmann Github.io[![Build Status](https://travis-ci.org/NHollmann/nhollmann.github.io.svg?branch=develop)](https://travis-ci.org/NHollmann/nhollmann.github.io)
 
-This GatsbyJS based site lists stuff I've done. It uses multiple sources including GitHub and Markdown files for data acquisition.
+This is just a simple repository list for github pages.
 
+THe purpose of this file is to give https://nhollmann.github.io/ a usable landing page if anybody should try to access it directly.
