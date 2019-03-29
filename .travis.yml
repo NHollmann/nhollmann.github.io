@@ -6,6 +6,8 @@ node_js:
   - '9'
 git:
   depth: 3
+before_script:
+  - yarn compile
 script:
   - TOKEN=$GITHUB_TOKEN yarn build
 deploy:
