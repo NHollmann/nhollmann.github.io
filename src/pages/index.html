@@ -1,5 +1,71 @@
 {{#> layout}}
     {{#*inline "content"}}
-        <h2>Projects</h2>
+        <p>This page should not be treated as my personal site, 
+            but more as an fallback. Here you can find a list 
+            of all GitHub Repositories I've worked on.</p>
+        
+        <p>Interesting fields:</p>
+        <table border="1">
+            <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>GitHub Username</td><td>{{data.user.login}}</td></tr>
+                <tr><td>GitHub Profile</td><td>{{data.user.html_url}}</td></tr>
+                <tr><td>GitHub Name</td><td>{{data.user.name}}</td></tr>
+                <tr><td>Company</td><td>{{data.user.company}}</td></tr>
+                <tr><td>Blog</td><td>{{data.user.blog}}</td></tr>
+                <tr><td>Location</td><td>{{data.user.location}}</td></tr>
+                <tr><td>Bio</td><td>{{data.user.bio}}</td></tr>
+                <tr><td>Public Repo count</td><td>{{data.user.public_repos}}</td></tr>
+                <tr><td>Followers</td><td>{{data.user.followers}}</td></tr>
+                <tr><td>Following</td><td>{{data.user.following}}</td></tr>
+            </tbody>
+        </table>
+        <p>My public repos:</p>
+        <table border="1">
+            <thead>
+                <tr><th>Repo</th><th>Field</th><th>Value</th></tr> 
+            </thead>
+            <tbody>
+                {{#each data.repos}}
+                    {{#if (eq ../data.user.id this.owner.id)}}
+                    <tr><td rowspan="10">{{this.name}}</td><td>Full name</td><td>{{this.full_name}}</td></tr>
+                    <tr><td>Owner</td><td>{{this.owner.login}}</td></tr>
+                    <tr><td>Repo URL</td><td>{{this.html_url}}</td></tr>
+                    <tr><td>Description</td><td>{{this.description}}</td></tr>
+                    <tr><td>Fork</td><td>{{#if this.fork}}yes{{else}}no{{/if}}</td></tr>
+                    <tr><td>Homepage</td><td>{{#if this.homepage}}{{this.homepage}}{{else}}no{{/if}}</td></tr>
+                    <tr><td>Stargazers</td><td>{{this.stargazers_count}}</td></tr>
+                    <tr><td>Watchers</td><td>{{this.watchers_count}}</td></tr>
+                    <tr><td>Primary Language</td><td>{{this.language}}</td></tr>
+                    <tr><td>Forks</td><td>{{this.forks}}</td></tr>
+                    {{/if}}
+                {{/each}}
+            </tbody>
+        </table>
+        <p>Repos I've worked on:</p>
+        <table border="1">
+            <thead>
+                <tr><th>Repo</th><th>Field</th><th>Value</th></tr> 
+            </thead>
+            <tbody>
+                {{#each data.repos}}
+                    {{#if (ne ../data.user.id this.owner.id)}}
+                    <tr><td rowspan="10">{{this.name}}</td><td>Full name</td><td>{{this.full_name}}</td></tr>
+                    <tr><td>Owner</td><td>{{this.owner.login}}</td></tr>
+                    <tr><td>Repo URL</td><td>{{this.html_url}}</td></tr>
+                    <tr><td>Description</td><td>{{this.description}}</td></tr>
+                    <tr><td>Fork</td><td>{{#if this.fork}}yes{{else}}no{{/if}}</td></tr>
+                    <tr><td>Homepage</td><td>{{#if this.homepage}}{{this.homepage}}{{else}}no{{/if}}</td></tr>
+                    <tr><td>Stargazers</td><td>{{this.stargazers_count}}</td></tr>
+                    <tr><td>Watchers</td><td>{{this.watchers_count}}</td></tr>
+                    <tr><td>Primary Language</td><td>{{this.language}}</td></tr>
+                    <tr><td>Forks</td><td>{{this.forks}}</td></tr>
+                    {{/if}}
+                {{/each}}
+            </tbody>
+        </table>
     {{/inline}}
 {{/layout}}
+

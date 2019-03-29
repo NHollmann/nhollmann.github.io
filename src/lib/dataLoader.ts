@@ -17,8 +17,8 @@ async function dataLoader({ user, token }: DataLoaderOptions) {
         },
     });
 
-    const userResponse = await octokit.users.getByUsername({username: user});
-    
+    const userResponse = await octokit.users.getByUsername({ username: user });
+
     const repoOptions = octokit.repos.listForUser.endpoint.merge({
         username: user,
         per_page: 100, // 100 is the max. allowed value

@@ -13,7 +13,7 @@ async function main() {
     console.log("Static site generator");
     console.log("=====================");
 
-    let token : string | undefined = undefined;
+    let token: string | undefined = undefined;
 
     if (process.env.TOKEN) {
         token = process.env.TOKEN;

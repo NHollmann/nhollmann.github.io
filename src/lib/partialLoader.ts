@@ -7,9 +7,40 @@ interface LoaderOptions {
     srcPath: string,
 }
 
-async function partialLoader({ srcPath } : LoaderOptions) {
+function registerHelper(handlebarEnv : typeof handlebars) {
+    handlebarEnv.registerHelper({
+        eq: function (v1, v2) {
+            return v1 === v2;
+        },
+        ne: function (v1, v2) {
+            return v1 !== v2;
+        },
+        lt: function (v1, v2) {
+            return v1 < v2;
+        },
+        gt: function (v1, v2) {
+            return v1 > v2;
+        },
+        lte: function (v1, v2) {
+            return v1 <= v2;
+        },
+        gte: function (v1, v2) {
+            return v1 >= v2;
+        },
+        and: function () {
+            return Array.prototype.slice.call(arguments).every(Boolean);
+        },
+        or: function () {
+            return Array.prototype.slice.call(arguments, 0, -1).some(Boolean);
+        }
+    });
+}
+
+async function partialLoader({ srcPath }: LoaderOptions) {
     const handlebarEnv = handlebars.create();
-    const partials = glob.sync('**/*.html', {cwd: `${srcPath}/partials`});
+    registerHelper(handlebarEnv);
+    
+    const partials = glob.sync('**/*.html', { cwd: `${srcPath}/partials` });
 
     const partialPromises = partials.map(async file => {
         console.log(`|  [${file}] Loading partial`);

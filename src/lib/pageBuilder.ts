@@ -11,8 +11,8 @@ interface BuilderOptions {
     distPath: string
 }
 
-async function pageBuilder({config, handlebarEnv, data, srcPath, distPath} : BuilderOptions) {
-    const pages = glob.sync('**/*.html', {cwd: `${srcPath}/pages`});
+async function pageBuilder({ config, handlebarEnv, data, srcPath, distPath }: BuilderOptions) {
+    const pages = glob.sync('**/*.html', { cwd: `${srcPath}/pages` });
 
     const pagePromises = pages.map(async file => {
         console.log(`|  [${file}] Loading template`);
@@ -23,7 +23,7 @@ async function pageBuilder({config, handlebarEnv, data, srcPath, distPath} : Bui
 
         console.log(`|  [${file}] Start building`);
         const fileTemplate = handlebarEnv.compile(fileData.toString());
-        const fileOutput = await fileTemplate({config, data});
+        const fileOutput = await fileTemplate({ config, data });
 
         console.log(`|  [${file}] Save output`);
         await fse.ensureFile(fileDest);
