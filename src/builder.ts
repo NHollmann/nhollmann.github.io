@@ -18,7 +18,7 @@ async function main() {
     if (process.env.TOKEN) {
         token = process.env.TOKEN;
     } else {
-        console.warn("# No GitHub token set! Rate limits may be a problem.");
+        console.warn("## No GitHub token set! Rate limits may be a problem.");
     }
 
     console.log("-> Create empty public dir");
