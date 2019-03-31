@@ -1,9 +1,9 @@
 <br>
-<img src="{{data.user.avatar_url}}" class="profile-picture" />
+<img src="{{data.user.avatar_url}}" alt="Profile picture of {{config.author}}" class="profile-picture" />
 <br>
 <br>
 My Name is<br>
-<b>Nicolas Hollmann</b><br>
+<b>{{config.author}}</b><br>
 <br>
 My GitHub Profile<br>
 <b><a href="{{data.user.html_url}}" target="_blank" rel="noopener noreferrer">{{data.user.login}}</a></b><br>
@@ -18,3 +18,5 @@ You can find my blog at:<br>
 <b><a href="{{data.user.blog}}" target="_blank" rel="noopener noreferrer">{{data.user.blog}}</a></b><br>
 <br>
 I have <b>{{data.user.followers}}</b> GitHub Followers.<br>
+<br>
+<i>Last updated: {{config.lastUpdated}}</i>
