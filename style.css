@@ -9,6 +9,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    background-color: #f0f0f0;
 }
 
 header {
@@ -73,14 +74,16 @@ h4 {
 }
 
 .card {
-    -webkit-box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.5);
-    -moz-box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.5);
-    box-shadow: 2px 2px 11px 1px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.5);
+    -moz-box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.5);
+    box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.5);
     border-radius: 4px 4px 4px 4px;
     -moz-border-radius: 4px 4px 4px 4px;
     -webkit-border-radius: 4px 4px 4px 4px;
     padding: 10px;
     overflow: auto;
+    margin-bottom: 20px;
+    background-color: #ffffff;
 }
 
 .notify {
@@ -122,7 +125,7 @@ h4 {
 }
 
 .lang-badge {
-    background: #006e06;
+    background: #ff9b18;
 }
 
 .fork-badge {
