@@ -4,33 +4,64 @@
         <meta charset="utf-8" />
         <title>Nicolas Hollmann | Github.io</title>
         <meta name="author" content="Nicolas Hollmann">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Nicolas Hollmann&#x27;s GitHub repositories.">
         <meta name="keywords" content="Nicolas Hollmann, GitHub, Repsoitories">
         <meta http-equiv="content-language" content="en" />
         <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="stylesheet" href="bootstrap.min.css" />
         <link rel=canonical href="https://nhollmann.github.io/" />
     </head>
     <body>
         <header>
-            <h1>Nicolas Hollmann | Github.io</h1>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a name="top" id="top" class="navbar-brand" href="index.html#top">Nicolas Hollmann | Github.io</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#aboutme">About me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#public">My Repositories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#worked">Repositories I've worked on</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </header>
-        <div class="content">
-                    <section class="sidebar card">
-                        <h2># Error 404</h2>
-                        <p class="notify">
-                            Here is nothing.
-                        </p>
-                    </section>
-                    <section class="repos card">
-                        <h2># Error 404 - Page not found</h2>
-                        <p>
-                            The page or project you tried to open doesn't exists.
-                            Checkout the <a href="/">homepage</a> to get an overview 
-                            over all projects I've worked on. There you also find a list of project sites, 
-                            including some which are hosted on <code>github.io</code>.
-                        </p>
+        <br />
+        <div class="container">
+                    <section>
+                        <div class="row">
+                            <div class="offset-lg-2 col-md-12 col-lg-8">
+                                <div class="card border-danger mb-3">
+                                    <div class="card-header">Error 404 - Page not found</div>
+                                    <div class="card-body">
+                                        <p class="card-text text-danger">
+                                            The page or project you tried to open doesn't exists.
+                                            Checkout the <a href="/">homepage</a> to get an overview 
+                                            over all projects I've worked on. There you also find a list of project sites, 
+                                            including some which are hosted on <code>github.io</code>.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </section>
         </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="bootstrap.bundle.min.js"></script>
+        <script>
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            });
+        </script>
     </body>
 </html>
