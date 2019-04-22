@@ -8,11 +8,3 @@
     -moz-border-radius: 10px 10px 10px 10px;
     -webkit-border-radius: 10px 10px 10px 10px;
 }
-
-.repository {
-    border-bottom: 2px solid #999999;
-}
-
-.repository:last-child {
-    border-bottom: 0;
-}
