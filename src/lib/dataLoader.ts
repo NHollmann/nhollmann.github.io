@@ -39,7 +39,9 @@ async function dataLoader({ user, token }: DataLoaderOptions) {
 
     return {
         user: userResponse.data,
-        repos: repoResponse
+        repos: repoResponse,
+        own_repos: repoResponse.filter((x) => x.owner.id === userResponse.data.id),
+        contrib_repos: repoResponse.filter((x) => x.owner.id !== userResponse.data.id),
     };
 }
 

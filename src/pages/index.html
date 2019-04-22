@@ -1,31 +1,54 @@
 {{#> layout}}
     {{#*inline "content"}}
-        <section class="sidebar card">
-            <h2># About me</h2>
-            <p class="notify">
+        <section>
+            <div class="alert alert-warning" role="alert">
                 This page should not be treated as my personal site. 
                 Here you can find a list of all GitHub Repositories I've worked on.
-            </p>
-            {{> aboutme}}
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="card">
+                        <div class="card-header">
+                            <a name="aboutme">About me</a>
+                        </div>
+                        <div class="card-body">
+                            {{> aboutme}}
+                        </div>
+                    </div>
+                </div>
+            </div>  
         </section>
-        <section class="repos card">
-            <h2># Repositories</h2>
+        <section>
+            <br>
+            <h2>Repositories</h2>
             <p>I have <b>{{data.user.public_repos}}</b> public repositories on GitHub.</p>
 
-            <h3>> My public repositories:</h3>
-            {{#each data.repos}}
-                {{#if (eq ../data.user.id this.owner.id)}}
-                    {{> repository repo=this name=this.name}}
-                {{/if}}
-            {{/each}}
-            <br>
+            <h3><a name="public">My public repositories:</a></h3>
+            <br />
+            {{#grouped_each 3 data.own_repos}}
+                <div class="row">
+                    {{#each this}}
+                        <div class="col-md-6 col-lg-4">
+                            {{> repository repo=this name=this.name}}
+                            <br />
+                        </div>
+                    {{/each}}
+                </div>
+            {{/grouped_each}}
 
-            <h3>> Repositories I've worked on:</h3>
-            {{#each data.repos}}
-                {{#if (ne ../data.user.id this.owner.id)}}
-                    {{> repository repo=this name=this.full_name}}
-                {{/if}}
-            {{/each}}
+            <br>
+            <h3><a name="worked">Repositories I've worked on:</a></h3>
+            <br />
+            {{#grouped_each 2 data.contrib_repos}}
+                <div class="row">
+                    {{#each this}}
+                        <div class="col-md-6">
+                            {{> repository repo=this name=this.full_name}}
+                            <br />
+                        </div>
+                    {{/each}}
+                </div>
+            {{/grouped_each}}
 
         </section>
     {{/inline}}

@@ -1,21 +1,33 @@
-<div class="repository">
-    <h4>
-        {{#if repo.fork}}<span class="fork-badge badge">Fork</span>{{/if}}
-        <span class="lang-badge badge">{{repo.language}}</span>
-        <a href="{{repo.html_url}}" target="_blank" rel="noopener noreferrer">
-            {{name}}
-        </a>
-    </h4>
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">
+            <a href="{{repo.html_url}}" target="_blank" rel="noopener noreferrer">
+                {{name}}
+            </a>
+            <span class="badge badge-primary">{{repo.language}}</span>
+            {{#if repo.fork}}<span class="badge badge-info">Fork</span>{{/if}}
+        </h5>
 
-    {{#if repo.homepage}}
-        <a href="{{repo.homepage}}" target="_blank" rel="noopener noreferrer">{{repo.homepage}}</a>
-    {{/if}}
+        <p class="card-text">{{repo.description}}</p>
 
-    <p>{{repo.description}}</p>
-
-    <p>
-        Stargazers:&nbsp;<b>{{repo.stargazers_count}}</b> | 
-        Watchers:&nbsp;<b>{{repo.watchers_count}}</b> |
-        Forks:&nbsp;<b>{{repo.forks}}</b>
-    </p>
+        {{#if repo.homepage}}
+            <a 
+                class="btn btn-primary" 
+                href="{{repo.homepage}}"
+                data-toggle="tooltip" 
+                data-placement="bottom" 
+                title="{{repo.homepage}}"
+                target="_blank" 
+                rel="noopener noreferrer">
+                Homepage
+            </a>
+        {{/if}}
+    </div>
+    <div class="card-footer">
+        <small class="text-muted">
+            Stargazers:&nbsp;<b>{{repo.stargazers_count}}</b> | 
+            Watchers:&nbsp;<b>{{repo.watchers_count}}</b> |
+            Forks:&nbsp;<b>{{repo.forks}}</b>
+        </small>
+    </div>
 </div>

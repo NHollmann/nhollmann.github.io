@@ -1,22 +1,16 @@
-<br>
-<img src="{{data.user.avatar_url}}" alt="Profile picture of {{config.author}}" class="profile-picture" />
-<br>
-<br>
-My Name is<br>
-<b>{{config.author}}</b><br>
-<br>
-My GitHub Profile<br>
-<b><a href="{{data.user.html_url}}" target="_blank" rel="noopener noreferrer">{{data.user.login}}</a></b><br>
-<br>
-I come from<br>
-<b>{{data.user.location}}</b><br>
-<br>
-I work at<br>
-<b>{{data.user.company}}</b><br>
-<br>
-You can find my blog at:<br>
-<b><a href="{{data.user.blog}}" target="_blank" rel="noopener noreferrer">{{data.user.blog}}</a></b><br>
-<br>
-I have <b>{{data.user.followers}}</b> GitHub Followers.<br>
-<br>
-<i>Last updated: {{config.lastUpdated}}</i>
+<div class="row">
+    <div class="col-md-3">
+        <img src="{{data.user.avatar_url}}" alt="Profile picture of {{config.author}}" class="profile-picture" />
+    </div>
+    <div class="col-md-9">
+            <ul class="list-group">
+                <li class="list-group-item">My Name is <b>{{config.author}}</b></li>
+                <li class="list-group-item">GitHub Profile: <b><a href="{{data.user.html_url}}" target="_blank" rel="noopener noreferrer">{{data.user.login}}</a></b></li>
+                <li class="list-group-item">I come from <b>{{data.user.location}}</b></li>
+                <li class="list-group-item">I work at <b>{{data.user.company}}</b></li>
+                <li class="list-group-item">Blog: <b><a href="{{data.user.blog}}" target="_blank" rel="noopener noreferrer">{{data.user.blog}}</a></b></li>
+                <li class="list-group-item">I have <b>{{data.user.followers}}</b> GitHub Followers</li>
+                <li class="list-group-item list-group-item-light"><i>Last updated: {{config.lastUpdated}}</i></li>
+            </ul>
+    </div>
+</div>

@@ -32,7 +32,22 @@ function registerHelper(handlebarEnv : typeof handlebars) {
         },
         or: function () {
             return Array.prototype.slice.call(arguments, 0, -1).some(Boolean);
-        }
+        },
+        // see https://funkjedi.com/technology/412-every-nth-item-in-handlebars/
+        grouped_each: function(every, context, options) {
+            var out = "", subcontext = [], i;
+            if (context && context.length > 0) {
+                for (i = 0; i < context.length; i++) {
+                    if (i > 0 && i % every === 0) {
+                        out += options.fn(subcontext);
+                        subcontext = [];
+                    }
+                    subcontext.push(context[i]);
+                }
+                out += options.fn(subcontext);
+            }
+            return out;
+        },
     });
 }
 

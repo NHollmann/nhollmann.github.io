@@ -1,19 +1,21 @@
 {{#> layout}}
     {{#*inline "content"}}
-        <section class="sidebar card">
-            <h2># Error 404</h2>
-            <p class="notify">
-                Here is nothing.
-            </p>
-        </section>
-        <section class="repos card">
-            <h2># Error 404 - Page not found</h2>
-            <p>
-                The page or project you tried to open doesn't exists.
-                Checkout the <a href="/">homepage</a> to get an overview 
-                over all projects I've worked on. There you also find a list of project sites, 
-                including some which are hosted on <code>github.io</code>.
-            </p>
+        <section>
+            <div class="row">
+                <div class="offset-lg-2 col-md-12 col-lg-8">
+                    <div class="card border-danger mb-3">
+                        <div class="card-header">Error 404 - Page not found</div>
+                        <div class="card-body">
+                            <p class="card-text text-danger">
+                                The page or project you tried to open doesn't exists.
+                                Checkout the <a href="/">homepage</a> to get an overview 
+                                over all projects I've worked on. There you also find a list of project sites, 
+                                including some which are hosted on <code>github.io</code>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     {{/inline}}
 {{/layout}}
