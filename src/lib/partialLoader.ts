@@ -1,7 +1,7 @@
 import fse from 'fs-extra';
 import path from 'path';
 import handlebars from 'handlebars';
-import glob from 'glob';
+import { glob } from 'glob';
 
 interface LoaderOptions {
     srcPath: string,

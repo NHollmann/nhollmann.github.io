@@ -1,5 +1,5 @@
 const lastUpdated = new Date();
-const lastUpdatedOptions = {
+const lastUpdatedOptions : Intl.DateTimeFormatOptions = {
     timeZone: 'UTC',
     hour12: false,
     year: 'numeric',

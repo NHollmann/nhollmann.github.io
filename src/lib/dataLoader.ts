@@ -1,4 +1,4 @@
-import Octokit from '@octokit/rest';
+import { Octokit } from 'octokit';
 
 interface DataLoaderOptions {
     token: string | undefined,
@@ -17,7 +17,7 @@ async function dataLoader({ user, token }: DataLoaderOptions) {
         },
     });
 
-    const rateLimit = await octokit.rateLimit.get();
+    const rateLimit = await octokit.rest.rateLimit.get();
     if (!token) {
         console.log(`|  You have ${rateLimit.data.rate.remaining} requests remaining.`);
     }
@@ -28,14 +28,14 @@ async function dataLoader({ user, token }: DataLoaderOptions) {
         throw new Error("GitHub API rate limit exceeded.");
     }
 
-    const userResponse = await octokit.users.getByUsername({ username: user });
+    const userResponse = await octokit.rest.users.getByUsername({ username: user });
 
-    const repoOptions = octokit.repos.listForUser.endpoint.merge({
+    const repoOptions = octokit.rest.repos.listForUser.endpoint.merge({
         username: user,
         per_page: 100, // 100 is the max allowed value
         type: 'all',
     });
-    const repoResponse = await octokit.paginate(repoOptions);
+    const repoResponse = await octokit.paginate<any>(repoOptions);
 
     return {
         user: userResponse.data,
