@@ -36,6 +36,7 @@ jobs:
         with:
           node-version: 21
           cache: 'yarn'
+      - run: yarn
       - run: yarn compile
       - run: TOKEN=$GITHUB_TOKEN yarn build
       - name: Upload artifact
